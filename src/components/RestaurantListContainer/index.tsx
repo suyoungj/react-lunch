@@ -22,7 +22,6 @@ const RestaurantListContainer = ({ restaurants }: Props) => {
   const [category, setCategory] = useState(DEFAULT_CATEGORY);
   const [sortBy, setSortBy] = useState(DEFAULT_SORT_BY);
   const { isModalOpen, openModal, closeModal } = useModal();
-  const canModalOpen = isModalOpen && clickedRestaurant !== null;
 
   const handleRestaurantClick = (restaurant: Restaurant) => {
     setClickedRestaurant(restaurant);
@@ -45,7 +44,7 @@ const RestaurantListContainer = ({ restaurants }: Props) => {
           />
         </section>
       </main>
-      {canModalOpen && (
+      {isModalOpen && clickedRestaurant && (
         <RestaurantDetailModal
           restaurant={clickedRestaurant}
           onCloseModal={closeModal}
