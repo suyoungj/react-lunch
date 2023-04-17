@@ -11,7 +11,7 @@ interface Props {
 }
 
 const RestaurantDetailModal = ({ restaurant, onCloseModal }: Props) => {
-  const { category, name, distance, description, link } = restaurant;
+  const { category, name, takingMinute, description, link } = restaurant;
 
   return (
     <Modal onCloseModal={onCloseModal}>
@@ -23,7 +23,7 @@ const RestaurantDetailModal = ({ restaurant, onCloseModal }: Props) => {
         </div>
         <h2 className="modal-title text-title detail-title">{name}</h2>
         <span className="restaurant__distance text-body detail-distance">
-          캠퍼스부터 {distance}분 내
+          캠퍼스부터 {takingMinute}분 내
         </span>
         {description && <div className="description">{description}</div>}
         {link && (

@@ -23,11 +23,11 @@ export const restaurantService: RestaurantService = {
 
   sortByDistance(restaurants) {
     return [...restaurants].sort((a: Restaurant, b: Restaurant) => {
-      if (a.distance === b.distance) {
+      if (a.takingMinute === b.takingMinute) {
         return this.compareByName(a, b);
       }
 
-      return a.distance - b.distance;
+      return a.takingMinute - b.takingMinute;
     });
   },
 

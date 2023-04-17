@@ -10,7 +10,7 @@ interface Props {
 }
 
 const RestaurantItem = ({ restaurant, onClickRestaurant }: Props) => {
-  const { category, name, distance, description } = restaurant;
+  const { category, name, takingMinute, description } = restaurant;
 
   const handleClick = () => {
     onClickRestaurant(restaurant);
@@ -26,7 +26,7 @@ const RestaurantItem = ({ restaurant, onClickRestaurant }: Props) => {
           <div>
             <h2 className="restaurant__name text-subtitle">{name}</h2>
             <span className="restaurant__distance text-body">
-              캠퍼스부터 {distance}분 내
+              캠퍼스부터 {takingMinute}분 내
             </span>
           </div>
         </div>
