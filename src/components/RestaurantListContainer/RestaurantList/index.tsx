@@ -17,15 +17,18 @@ const RestaurantList = ({
   sortBy,
   onClickRestaurant,
 }: Props) => {
-  const filtered = restaurantService.filterByCategory(restaurants, category);
-  const sorted =
+  const filteredRestaurants = restaurantService.filterByCategory(
+    restaurants,
+    category,
+  );
+  const sortedRestaurants =
     sortBy === DEFAULT_SORT_BY
-      ? restaurantService.sortByName(filtered)
-      : restaurantService.sortByDistance(filtered);
+      ? restaurantService.sortByName(filteredRestaurants)
+      : restaurantService.sortByDistance(filteredRestaurants);
 
   return (
     <ul className="restaurant-list">
-      {sorted.map((restaurant) => (
+      {sortedRestaurants.map((restaurant) => (
         <RestaurantItem
           key={restaurant.id}
           restaurant={restaurant}
