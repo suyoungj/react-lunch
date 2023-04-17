@@ -5,25 +5,23 @@ import JapaneseIcon from './JapaneseIcon';
 import KoreanIcon from './KoreanIcon';
 import WesternIcon from './WesternIcon';
 
+import type { Category } from '../../../domain/type';
+
 interface Props {
-  category: string;
+  category: Category;
 }
 
+const CATEGORY_ICONS = {
+  한식: <KoreanIcon />,
+  중식: <ChineseIcon />,
+  일식: <JapaneseIcon />,
+  양식: <WesternIcon />,
+  아시안: <AsianIcon />,
+  기타: <EtcIcon />,
+};
+
 const CategoryIcon = ({ category }: Props) => {
-  switch (category) {
-    case '한식':
-      return <KoreanIcon />;
-    case '중식':
-      return <ChineseIcon />;
-    case '일식':
-      return <JapaneseIcon />;
-    case '양식':
-      return <WesternIcon />;
-    case '아시안':
-      return <AsianIcon />;
-    default:
-      return <EtcIcon />;
-  }
+  return CATEGORY_ICONS[category];
 };
 
 export default CategoryIcon;
