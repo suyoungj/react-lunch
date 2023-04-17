@@ -2,11 +2,11 @@ import RestaurantItem from './RestaurantItem';
 
 import { DEFAULT_SORT_BY } from '../../../domain/constants';
 import { restaurantService } from '../../../domain/restaurantService';
-import type { Restaurant } from '../../../domain/type';
+import type { FilterCategory, Restaurant } from '../../../domain/type';
 
 interface Props {
   restaurants: Restaurant[];
-  category: string;
+  category: FilterCategory;
   sortBy: string;
   onClickRestaurant: (restaurant: Restaurant) => void;
 }

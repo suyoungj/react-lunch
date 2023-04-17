@@ -7,7 +7,7 @@ export const CATEGORIES = [
   '양식',
   '아시안',
   '기타',
-];
-export const SORT_BY = ['이름순', '거리순'];
-export const [DEFAULT_CATEGORY] = CATEGORIES;
-export const [DEFAULT_SORT_BY] = SORT_BY;
+] as const;
+export const SORT_BY = ['이름순', '거리순'] as const;
+export const DEFAULT_CATEGORY = CATEGORIES[0];
+export const DEFAULT_SORT_BY = SORT_BY[0];
