@@ -38,6 +38,7 @@ const RestaurantDetailModal = ({ restaurant, onCloseModal }: Props) => {
         )}
         <div className="button-container detail-button-container">
           <button
+            disabled
             type="button"
             className="button button--secondary text-caption"
           >

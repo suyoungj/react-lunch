@@ -43,6 +43,10 @@
   color: var(--grey-100);
 }
 
+.button:disabled {
+  cursor: not-allowed;
+}
+
 .restaurant {
   display: flex;
   align-items: flex-start;
